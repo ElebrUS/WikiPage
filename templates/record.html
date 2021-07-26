@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h4>ID сторінки:</h4>
+        <div>
+            {{ current_version.id}}
+        </div>
+        <br>
+
+        <h4>Заголовок:</h4>
+        <div>
+            {{ current_version.title }}
+        </div>
+        <br>
+
+        <h4>Контент:</h4>
+        <div>
+            {{ current_version.content }}
+        </div>
+        <br>
+
+        <h4>Поточна версія:</h4>
+        <div>
+            {{ current_version.current_version }}
+        </div>
+        <br>
+
+        <h4>Активна версія:</h4>
+        <div>
+            {{ current_version.active_version }}
+        </div>
+        <br>
+
+
+
+        <div>
+                <a href="/edit/{{ current_version.id }}" class="btn btn-primary">Редагувати</a>
+                <a href="/delete/{{ current_version.id }}" class="btn btn-danger">Видалити</a>
+        </div>
+
+
+
+{% endblock %}
